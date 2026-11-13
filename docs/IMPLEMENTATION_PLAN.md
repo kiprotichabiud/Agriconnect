@@ -12,6 +12,14 @@ Build vertical slices. Each slice should include the relevant UI, server-side be
 - Configure shadcn/ui only after confirming the app scaffold works.
 **Exit criteria:** app starts locally; lint/typecheck/build scripts are understood; repository structure is documented.
 
+### Phase 0 baseline (verified 2026-11-14)
+- Runtime/tooling: Node.js 24.15.0, npm 11.12.1, Git 2.54.0; PostgreSQL CLI tools (`psql`, `pg_isready`) are not installed or on PATH, so database server availability was not verified.
+- App scaffold: Next.js 16.4.6 App Router with React 19.3.0, TypeScript 5.9.3, Tailwind CSS 4.3.3, shadcn 4.23.0 and ESLint 9.39.5.
+- Source structure: `src/app` contains the root page, layout, global styles and favicon; `src/components/ui` contains the Button component; `src/lib` contains the class-name utility. `public` contains the default scaffold SVG assets.
+- Persistence, authentication and validation packages are not configured yet. No test runner is installed.
+- Available npm scripts are `dev`, `build`, `start` and `lint`. There is no separate typecheck script; the production build performs TypeScript compilation.
+- Verification: `npm.cmd run lint` passed; `npm.cmd run build` passed; `npm.cmd run dev` started and `GET /` returned HTTP 200.
+
 ## Phase 1 — Product and UI foundation
 - Implement responsive public landing page.
 - Establish typography, colours, navigation and reusable layout.
