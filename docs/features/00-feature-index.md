@@ -18,6 +18,7 @@ This index is the implementation queue for the AgriConnect MVP. Each feature mus
 | ID | Feature | Main outcome | Depends on | Initial status |
 |---|---|---|---|---|
 | F00 | Project foundation | A stable, configured application shell | Existing scaffold | VERIFIED |
+| F00A | Design system and public application experience | Consistent public UI and responsive landing experience | F00 | IMPLEMENTED — NOT VERIFIED |
 | F01 | Authentication and onboarding | Users can sign in and choose a permitted role | F00 | IMPLEMENTED â€” NOT VERIFIED |
 | F02 | User profiles and roles | Farmer/buyer profile data and server-enforced permissions | F01 | NOT STARTED |
 | F03 | Farmer dashboard | Farmers can understand and manage their activity | F02, F04 | NOT STARTED |

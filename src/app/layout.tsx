@@ -3,6 +3,8 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { Geist, Geist_Mono } from "next/font/google";
 import type { ReactNode } from "react";
 import { isClerkConfigured } from "@/lib/env";
+import { SiteFooter } from "@/components/shared/site-footer";
+import { SiteHeader } from "@/components/shared/site-header";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -16,8 +18,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AgriConnect",
-  description: "Find buyers and available agricultural produce in Kenya.",
+  title: "AgriConnect | Connect Kenyan Produce with Buyers",
+  description: "Discover available agricultural produce and connect Kenyan farmers with buyers.",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -26,11 +28,19 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col">
+      <body className="flex min-h-screen flex-col">
         {isClerkConfigured() ? (
-          <ClerkProvider>{children}</ClerkProvider>
+          <ClerkProvider>
+            <SiteHeader clerkEnabled />
+            {children}
+            <SiteFooter />
+          </ClerkProvider>
         ) : (
-          children
+          <>
+            <SiteHeader clerkEnabled={false} />
+            {children}
+            <SiteFooter />
+          </>
         )}
       </body>
     </html>

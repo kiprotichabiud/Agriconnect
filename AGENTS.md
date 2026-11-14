@@ -1,5 +1,6 @@
 # AgriConnect — Codex Engineering Instructions
 
+
 ## 1. Mission
 Build AgriConnect, a Kenya-first web application that helps farmers find buyers for available agricultural produce. The MVP focuses on reducing avoidable post-harvest loss by shortening the time between produce availability and a confirmed sale.
 
@@ -95,6 +96,23 @@ For each feature:
 - Never edit generated files or `node_modules` manually.
 - Update relevant docs when an approved architectural or product decision changes.
 
+We are introducing F00A — Design System and Public Application Experience.
+
+Read the new feature specification and the existing project instructions before making changes.
+
+First inspect the repository and check whether F00's project foundation is complete. Do not assume it is.
+
+Before implementation, report:
+1. What already exists.
+2. What is missing.
+3. Any conflicts with the existing architecture or feature specifications.
+4. Your proposed implementation plan.
+
+Do not start coding until I review the plan.
+
+When approved, implement F00A only. Do not start authentication, marketplace functionality, dashboards or backend features.
+
+Follow the acceptance criteria and provide evidence for each completed requirement.
 ## 10. Definition of done
 A feature is not done merely because its UI renders. It is done when:
 - Acceptance criteria are met.
