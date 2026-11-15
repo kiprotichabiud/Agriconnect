@@ -4,6 +4,8 @@ import { Suspense } from "react";
 import { redirect } from "next/navigation";
 import { isClerkConfigured, isDatabaseConfigured } from "@/lib/env";
 import { getPrismaClient } from "@/lib/db";
+import { buttonVariants } from "@/components/ui/button";
+import Link from "next/link";
 
 async function WorkspaceContent() {
   if (!isClerkConfigured()) {
@@ -66,6 +68,11 @@ async function WorkspaceContent() {
             Your {roleLabel.toLowerCase()} account is ready. Your account type
             is saved and will be here the next time you sign in.
           </p>
+          {profile.role === "FARMER" ? (
+            <Link className={buttonVariants({ size: "lg" })} href="/workspace/listings">
+              Manage produce listings
+            </Link>
+          ) : null}
         </div>
         <UserButton />
       </div>
@@ -73,9 +80,31 @@ async function WorkspaceContent() {
   );
 }
 
-export default function WorkspacePage() {
+async function WorkspaceNotice({
+  searchParams,
+}: {
+  searchParams: Promise<{ error?: string }>;
+}) {
+  const params = await searchParams;
+  if (params.error !== "farmer-only") return null;
+
   return (
-    <main className="mx-auto flex w-full max-w-3xl flex-1 items-center justify-center px-4 py-12">
+    <div className="mb-4 rounded-lg border border-destructive/30 bg-destructive/5 p-3 text-sm text-destructive" role="alert">
+      Produce listing tools are available to farmer accounts.
+    </div>
+  );
+}
+
+export default async function WorkspacePage({
+  searchParams,
+}: {
+  searchParams: Promise<{ error?: string }>;
+}) {
+  return (
+    <main className="mx-auto flex w-full max-w-3xl flex-1 flex-col items-center justify-center px-4 py-12">
+      <Suspense fallback={null}>
+        <WorkspaceNotice searchParams={searchParams} />
+      </Suspense>
       <Suspense fallback={<p role="status">Loading your account…</p>}>
         <WorkspaceContent />
       </Suspense>

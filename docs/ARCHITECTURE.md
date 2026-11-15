@@ -71,6 +71,8 @@ Use Server Actions where they simplify form mutations within the Next.js applica
 
 For F01 authentication and onboarding, Clerk renders the sign-in and sign-up flows. The role-selection form submits to a Server Action, which verifies the Clerk session, validates the role, and upserts the minimal internal User profile by Clerk user ID. The upsert is idempotent; an existing role is not changed by another selection. `/workspace` is the minimal post-onboarding entry point; role-specific dashboards remain part of later features.
 
+For F04 produce listings, farmer pages read through server-side Prisma services and listing create/edit/status forms submit through Server Actions. Every action resolves the current Clerk identity to the internal user, verifies the FARMER role, and scopes writes by both listing ID and farmer ID. Listing input is validated with Zod before persistence.
+
 ## 5. Server and client components
 - Default to Server Components.
 - Use Client Components only for interactive browser behaviour such as controlled filters, menus, dialogs or client-side form interactions.

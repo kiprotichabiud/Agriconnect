@@ -29,6 +29,8 @@ These are conceptual requirements, not permission to generate a final schema wit
 - Status.
 - Created/updated timestamps.
 
+For the first produce-listing release, supported units are `KG`, `CRATE`, `BAG` and `BUNCH`. Quantity is stored as `Decimal(12,3)` and KES unit price as `Decimal(12,2)`. Availability uses date-only values. Images are deferred until a storage provider is selected.
+
 ### BuyerRequest
 - ID and buyer/user foreign key.
 - Desired produce/category.
@@ -81,7 +83,6 @@ Do not allow clients to set arbitrary status strings. Do not add statuses withou
 - Add indexes for actual query patterns after considering filters and relationships; avoid speculative indexing.
 
 ## 7. Questions to resolve before final schema
-- Which produce units are supported in the first release?
 - Can one buyer request be fulfilled by multiple farmers, or must one listing satisfy it?
 - Can one listing be partially allocated to multiple accepted requests?
 - Does a farmer confirm stock before each acceptance?

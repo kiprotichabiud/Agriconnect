@@ -22,7 +22,7 @@ This index is the implementation queue for the AgriConnect MVP. Each feature mus
 | F01 | Authentication and onboarding | Users can sign in and choose a permitted role | F00 | IMPLEMENTED â€” NOT VERIFIED |
 | F02 | User profiles and roles | Farmer/buyer profile data and server-enforced permissions | F01 | NOT STARTED |
 | F03 | Farmer dashboard | Farmers can understand and manage their activity | F02, F04 | NOT STARTED |
-| F04 | Produce listings | Farmers can create and manage available produce | F02 | NOT STARTED |
+| F04 | Produce listings | Farmers can create and manage available produce | F01 | IMPLEMENTED — NOT VERIFIED |
 | F05 | Buyer marketplace | Buyers can discover active produce listings | F02, F04 | NOT STARTED |
 | F06 | Search and filtering | Buyers can narrow listings using supported criteria | F05 | NOT STARTED |
 | F07 | Buyer purchase requests | Buyers can request a quantity from a listing | F04, F05 | NOT STARTED |
