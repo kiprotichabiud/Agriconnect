@@ -39,5 +39,3 @@ Do not implement the buyer marketplace, search engine, purchase requests, matchi
 Use real database operations rather than hardcoded sample data for functional listing operations.
 
 After implementation, run the available tests, lint, type checking and production build. Report the files changed, test results, remaining issues and acceptance criteria evidence.
-
-Do not mark F04 VERIFIED without demonstrating that its requirements work.
