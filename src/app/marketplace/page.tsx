@@ -17,7 +17,7 @@ export default function MarketplacePage() {
           <span className="mx-auto grid size-14 place-items-center rounded-2xl bg-secondary text-primary"><Sprout aria-hidden="true" className="size-7" /></span>
           <p className="mt-6 text-sm font-semibold text-primary">Explore</p>
           <h1 className="mt-3 text-3xl font-semibold tracking-tight sm:text-5xl">A place to discover available produce</h1>
-          <p className="mt-5 text-base leading-7 text-muted-foreground">The AgriConnect marketplace is being prepared. This page does not yet contain live listings or search.</p>
+          <p className="mt-5 text-base leading-7 text-muted-foreground">The AgriConnect marketplace is being prepared.</p>
           <div className="mt-8"><Link className={buttonVariants({ size: "lg" })} href="/sign-up">Get started <ArrowRight aria-hidden="true" /></Link></div>
         </div>
         <div className="mx-auto mt-14 max-w-2xl">
