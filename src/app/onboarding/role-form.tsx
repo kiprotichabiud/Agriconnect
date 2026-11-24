@@ -45,7 +45,7 @@ export function RoleForm() {
       </Button>
       {isPending ? (
         <p role="status" className="text-sm text-muted-foreground">
-          Saving your choice…
+          Saving
         </p>
       ) : null}
       {state.error ? (
