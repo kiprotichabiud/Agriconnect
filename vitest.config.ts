@@ -7,6 +7,7 @@ export default defineConfig({
       "@": resolve(process.cwd(), "src"),
     },
   },
+  
   test: {
     include: ["src/**/*.test.ts"],
   },
